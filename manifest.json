@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "short_name": "First_extension",
+    "name": "First_extension",
+    "version": "1.1",
+    "permissions": ["tabs"],
+    "background": {
+        "scripts": ["public/js/background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://*"],
+            "css": [],
+            "js": ["public/js/content/app.js"],
+            "run_at": "document_idle"
+        }
+    ],
+    "browser_action": {
+        "default_popup": "public/popup.html",
+        "default_title": "React Ext"
+    },
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
